@@ -19,7 +19,8 @@ def increment_element(d, field):
     else:
         d[field] = d[field] + 1
         
-def make_panda(weather_data):
+def make_panda_separate(weather_data):
+    print 'make separate documents'
     d = {}
     masked_with_nan = {}
     for row in weather_data.iterrows():
@@ -48,6 +49,34 @@ def make_panda(weather_data):
         print "Replacing masked element '%s' with NaN %d times" % (key, masked_with_nan[key])
     return pd.Series(d.values())
 
+def make_panda_combined(weather_data):
+    print 'make combined documents'
+    d = {}
+    masked_with_nan = {}
+    for row in weather_data.iterrows():
+        # row is tuple (index, columns)
+        measure = row[1]
+        # print "Measurement of %s at from %s for %s" % (measure['shortName'], measure['validDateTime'], measure['validityDateTime'])
+        for lat, lon, val in zip(measure['lats'], measure['lons'], measure['values']):
+            # print "%f N %f S = %f" % (lat, lon, val)
+            common = "%f,%f,%s,%s" % (lat, lon, measure['validDateTime'], measure['validityDateTime'])
+            if common not in d:
+                d[common] = {}
+            d[common]['position'] = [lat, lon]
+            d[common]['validTime'] = measure['validDateTime']
+            d[common]['validityDateTime'] = measure['validityDateTime']
+            if type(val) == np.ma.core.MaskedConstant:
+                d[common][measure['shortName']+'masked'] = True
+                d[common][measure['shortName']] = np.nan
+                d[common]['value'] = np.nan
+                increment_element(masked_with_nan, measure['shortName'])
+            else:
+                d[common][measure['shortName']] = val
+                
+    for key in masked_with_nan:
+        print "Replacing masked element '%s' with NaN %d times" % (key, masked_with_nan[key])
+    return pd.Series(d.values())
+
 def check_array(array):
     for idx in range(len(array)):
         print idx
@@ -68,13 +97,17 @@ weather_data = we.get_forecast(base_date=date(2017, 11, 1), from_date=date(
 # print the result
 # print_data(weather_data)
 
-panda = make_panda(weather_data)
+panda = make_panda_combined(weather_data)
+panda_to_jsonfile(panda, 'forecast_full.json')
+panda = make_panda_separate(weather_data)
 panda_to_jsonfile(panda, 'forecast_full2.json')
 
 print 'get_actual'
 weather_data = we.get_actual(from_date=date(
     2017, 11, 1), to_date=date(2017, 11, 30), aggtime='hour', aggloc='grid')
-panda = make_panda(weather_data)
+panda = make_panda_combined(weather_data)
+panda_to_jsonfile(panda, 'actual_full1.json')
+panda = make_panda_separate(weather_data)
 panda_to_jsonfile(panda, 'actual_full2.json')
 
 
