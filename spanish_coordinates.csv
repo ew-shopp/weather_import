@@ -1,0 +1,301 @@
+City,Latitude,Longitude
+Madrid,40.420,-3.710
+Barcelona,41.400,2.170
+Valencia,39.480,-0.390
+Sevilla,37.400,-5.980
+Zaragoza,41.650,-0.890
+Malaga,36.720,-4.420
+Murcia,37.980,-1.130
+Las palmas,28.100,-15.430
+Palma,39.570,2.650
+Bilbao,43.250,-2.930
+Valladolid,41.650,-4.740
+Alacant,38.350,-0.480
+Cordoba,37.880,-4.770
+Vigo,42.220,-8.710
+Gijon,43.530,-5.670
+L'hospitalet de llobregat,41.350,2.100
+Granada,37.170,-3.590
+A coruna,43.330,-8.420
+Vitoria,42.850,-2.670
+Fuenlabrada,40.270,-3.800
+Badalona,41.450,2.240
+Elx,38.270,-0.680
+Oviedo,43.350,-5.830
+Santa cruz de tenerife,28.470,-16.250
+Mostoles,40.320,-3.880
+Alcala de henares,40.480,-3.370
+Cartagena,37.610,-0.980
+Pamplona,42.820,-1.650
+Sabadell,41.550,2.100
+Jerez,36.680,-6.130
+Terrassa,41.570,2.000
+Leganes,40.330,-3.770
+Donostia,43.320,-1.980
+Santander,43.470,-3.800
+Alcorcon,40.350,-3.820
+Burgos,42.350,-3.690
+Getafe,40.300,-3.730
+Almeria,36.830,-2.430
+Castello,39.970,-0.050
+Salamanca,40.970,-5.670
+Albacete,39.000,-1.870
+Huelva,37.250,-6.940
+Logrono,42.470,-2.440
+San cristobal de la laguna,28.480,-16.320
+Badajoz,38.880,-6.970
+Cadiz,36.530,-6.290
+Leon,42.590,-5.570
+Jaen,37.770,-3.800
+Tarragona,41.120,1.240
+Lleida,41.620,0.630
+Dos hermanas,37.280,-5.930
+Mataro,41.540,2.440
+Santa coloma de gramenet,41.470,2.220
+Torrejon de ardoz,40.460,-3.480
+Marbella,36.520,-4.890
+Ourense,42.330,-7.870
+Algeciras,36.130,-5.450
+Alcobendas,40.540,-3.640
+Reus,41.160,1.110
+Santiago de compostela,42.880,-8.540
+Parla,40.250,-3.770
+Barakaldo,43.280,-2.980
+Telde,28.000,-15.420
+Lorca,37.680,-1.700
+San fernando,36.470,-6.200
+Lugo,43.020,-7.560
+Caceres,39.470,-6.380
+Aviles,43.560,-5.910
+Coslada,40.430,-3.570
+Cornella,41.370,2.060
+Girona,41.980,2.810
+Getxo,43.360,-3.000
+Talavera de la reina,39.960,-4.830
+Sant boi de llobregat,41.360,2.030
+El puerto de santa maria,36.610,-6.230
+Palencia,42.030,-4.540
+Guadalajara,40.640,-3.170
+Pontevedra,42.420,-8.660
+Ferrol,43.490,-8.240
+Pozuelo de alarcon,40.440,-3.810
+Las rozas de madrid,40.500,-3.870
+Ceuta,35.910,-5.300
+San sebastian de los reyes,40.550,-3.620
+Toledo,39.860,-4.030
+Ciudad real,38.980,-3.940
+Sant cugat del valles,41.470,2.080
+Torrent,39.440,-0.460
+Rubi,41.500,2.030
+El ejido,36.790,-2.830
+Melilla,35.300,-2.950
+Manresa,41.740,1.810
+Chiclana,36.420,-6.150
+Zamora,41.520,-5.750
+Velez-malaga,36.790,-4.100
+Gandia,38.980,-0.180
+El prat de llobregat,41.340,2.080
+Ponferrada,42.550,-6.590
+Viladecans,41.320,2.020
+Vilanova i la geltru,41.230,1.720
+Majadahonda,40.470,-3.870
+La linea,36.170,-5.360
+Orihuela,38.090,-0.950
+Sanlucar de barrameda,36.780,-6.360
+Alcala de guadaira,37.340,-5.840
+Roquetas de mar,36.770,-2.610
+Alcoi,38.700,-0.480
+Irun,43.350,-1.800
+Linares,38.100,-3.630
+Sagunt,39.680,-0.290
+Cerdanyola,41.490,2.130
+Granollers,41.610,2.280
+Segovia,40.940,-4.110
+Benidorm,38.550,-0.140
+Torrelavega,43.350,-4.060
+Collado villalba,40.640,-4.000
+Fuengirola,36.550,-4.640
+Torrevieja,37.980,-0.690
+Motril,36.760,-3.520
+Santa lucia,27.920,-15.540
+Mijas,36.600,-4.640
+Elda,38.480,-0.810
+Avila,40.670,-4.700
+Molina de segura,38.060,-1.220
+Torremolinos,36.630,-4.510
+Mollet del valles,41.550,2.210
+Castelldefels,41.290,1.960
+Merida,38.920,-6.340
+Siero,43.400,-5.660
+Portugalete,43.320,-3.020
+Arrecife,28.960,-13.550
+Cuenca,40.080,-2.140
+Huesca,42.140,-0.410
+Paterna,39.500,-0.420
+Arona,28.090,-16.670
+Estepona,36.440,-5.160
+Santurtzi,43.330,-3.040
+Puertollano,38.680,-4.120
+Vila-real,39.940,-0.100
+Mieres,43.250,-5.780
+Esplugues de llobregat,41.370,2.080
+Sant vicent del raspeig,38.400,-0.520
+Sant feliu de llobregat,41.380,2.050
+Aranjuez,40.030,-3.610
+Utrera,37.180,-5.780
+Langreo,43.310,-5.690
+Basauri,43.240,-2.900
+San fernando de henares,40.430,-3.530
+Gava,41.310,2.000
+Tres cantos,40.610,-3.710
+Mislata,39.490,-0.400
+Antequera,37.020,-4.560
+Rivas-vaciamadrid,40.330,-3.520
+Colmenar viejo,40.670,-3.760
+Benalmadena,36.600,-4.570
+Mairena del aljarafe,37.340,-6.070
+Calvia,39.570,2.510
+Eivissa,38.910,1.420
+Denia,38.850,0.110
+Alzira,39.160,-0.440
+Arganda del rey,40.300,-3.440
+Valdemoro,40.190,-3.680
+Lucena,37.410,-4.490
+Plasencia,43.170,-2.420
+La orotava,28.390,-16.520
+Soria,41.770,-2.460
+Puerto real,36.530,-6.200
+Alcantarilla,37.960,-1.220
+Errenteria,43.320,-1.890
+Miranda de ebro,42.690,-2.950
+Pinto,40.240,-3.700
+Ronda,36.740,-5.160
+Burjassot,39.500,-0.390
+Ecija,37.540,-5.090
+Naron,43.520,-8.170
+Villena,38.640,-0.870
+Vic,41.940,2.240
+Cieza,38.240,-1.430
+San bartolome de tirajana,27.920,-15.570
+Andujar,38.040,-4.060
+Igualada,41.600,1.610
+Ontinyent,38.820,-0.620
+Yecla,38.610,-1.120
+Vilafranca del penedes,41.350,-1.680
+Arucas,28.110,-15.530
+Petrer,38.490,-0.770
+Tudela,42.070,-1.610
+Ubeda,38.020,-3.380
+Los palacios y villafranca,37.260,-6.000
+Tomelloso,39.160,-3.020
+Manacor,39.570,3.200
+Vilagarcia de arousa,42.610,-8.770
+Los realejos,28.390,-16.570
+Teruel,40.340,-1.110
+Figueres,42.270,2.950
+Blanes,41.690,2.790
+Sant adria de besos,41.430,2.210
+Don benito,38.960,-5.870
+Sant joan despi,41.370,2.070
+Ripollet,41.500,2.160
+La rinconada,37.490,-5.970
+Boadilla del monte,40.400,-3.890
+Aranda de duero,41.680,-3.700
+Sestao,43.300,-2.990
+Alaquas,39.450,-0.460
+Galdakao,43.240,-2.850
+Puerto de la cruz,28.400,-16.540
+Hellin,38.510,-1.700
+Oleiros,43.340,-8.320
+Montcada i reixac,41.490,2.180
+Galapagar,40.590,-4.010
+Rincon de la victoria,36.720,-4.310
+La vall d'uixo,39.820,-0.240
+Leioa,43.330,-3.000
+Olot,42.190,2.480
+San andres del rabanedo,42.620,-5.610
+Tortosa,40.830,0.520
+Redondela,42.280,-8.600
+Aguilas,37.410,-1.590
+Totana,37.770,-1.500
+Xirivella,39.480,-0.410
+Puente genil,37.390,-4.770
+Carballo,43.220,-8.690
+Burriana,39.890,-0.100
+Arcos de la frontera,36.760,-5.810
+Torre-pacheco,37.740,-0.960
+Novelda,38.390,-0.780
+Marratxi,39.650,2.800
+Almendralejo,38.680,-6.410
+Moron de la frontera,37.130,-5.460
+Premia de mar,41.500,2.380
+Eibar,43.190,-2.450
+Alcazar de san juan,39.390,-3.210
+Alhaurin de la torre,36.670,-4.550
+El vendrell,41.230,1.520
+Xativa,39.000,-0.530
+Barbera del valles,41.520,2.120
+Martorell,41.470,1.930
+Llucmajor,39.490,2.880
+Valdepenas,38.760,-3.390
+Carmona,37.480,-5.630
+Villaviciosa de odon,40.360,-3.890
+Crevillent,38.260,-0.810
+Aldaia,39.470,-0.460
+Sant pere de ribes,41.270,1.770
+Sueca,39.210,-0.320
+Manises,39.490,-0.450
+Arteixo,43.300,-8.510
+Sant vicenc dels horts,41.400,2.010
+Camargo,43.400,-3.900
+Durango,43.180,-2.630
+Ribeira,42.800,-8.950
+Sant andreu de la barca,41.450,1.970
+Cangas,42.280,-8.780
+Inca,39.720,2.910
+Jumilla,38.480,-1.340
+Culleredo,43.290,-8.390
+Caravaca de la cruz,38.110,-1.870
+Ingenio,27.920,-15.440
+San roque,36.220,-5.400
+Quart de poblet,39.490,-0.440
+Rota,36.630,-6.360
+Villanueva de la serena,38.980,-5.800
+La vila joiosa,38.510,-0.240
+Camas,37.400,-6.020
+Marin,42.400,-8.700
+Coria del rio,37.300,-6.060
+Mahon,39.890,4.250
+Mazarron,37.600,-1.320
+Ciutadella de menorca,40.000,3.830
+Lebrija,36.930,-6.080
+Algemesi,39.200,-0.440
+Castro-urdiales,43.390,-3.220
+Baza,37.500,-2.790
+Villarrobledo,39.270,-2.610
+Azuqueca de henares,40.570,-3.270
+Cambrils,41.080,1.050
+Ibi,38.640,-0.570
+Calahorra,42.340,-2.080
+Pineda de mar,41.630,2.690
+Adra,36.760,-3.020
+Santa perpetua de mogoda,41.540,2.180
+Almansa,38.870,-1.110
+Granadilla de abona,28.110,-16.580
+Priego de cordoba,37.430,-4.200
+Montilla,37.600,-4.640
+San javier,37.810,-0.840
+Molins de rei,41.420,2.010
+Lloret de mar,41.700,2.850
+Benicarlo,40.430,0.410
+A estrada,42.700,-8.500
+Galdar,28.150,-15.660
+Icod de los vinos,28.360,-16.700
+Santa pola,38.190,-0.560
+Castrillon,43.400,-6.800
+Arrasate,43.080,-2.490
+Calp,38.660,0.050
+Zarautz,43.290,-2.170
+Catarroja,39.400,-0.390
+Onda,39.960,-0.270
+Vinaros,40.490,0.460
