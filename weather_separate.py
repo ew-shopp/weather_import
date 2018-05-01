@@ -19,9 +19,10 @@ class Weather_separate:
             # print "Measurement of %s at from %s for %s" % (measure['shortName'], measure['validDateTime'], measure['validityDateTime'])
             for lat, lon, val in zip(measure['lats'], measure['lons'], measure['values']):
                 # print "%f N %f S = %f" % (lat, lon, val)
-                common = "%f,%f,%s,%s,%s" % (lat, lon, measure['validDateTime'], measure['validityDateTime'], measure['shortName'])
+                common = "%s,%f,%f,%s,%s,%s" % (city_name, lat, lon, measure['validDateTime'], measure['validityDateTime'], measure['shortName'])
                 if common not in self._dict:
                     self._dict[common] = {}
+                    #print "Common: %s" % common
                 self._dict[common]['cityName'] = city_name
                 self._dict[common]['position'] = [lat, lon]
                 self._dict[common]['validTime'] = measure['validDateTime']
