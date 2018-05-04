@@ -12,23 +12,19 @@ class Weather_forecast_2_json:
         self._we = we
         self._fc = open(file_name_combined, 'w')
         self._fs = open(file_name_separate, 'w')
+        self._file_name_combined = file_name_combined
+        self._file_name_separate = file_name_separate
     
-
+    def __del__(self):
+        print 'Closing file %s' % self._file_name_combined
+        self._fc.close()
+        print 'Closing file %s' % self._file_name_separate
+        self._fs.close()
+    
     def fetch_forecast(self, from_date, to_date, city_elem):
         base_dates = pd.date_range(from_date, to_date)
         self._fetch_forecast_daterange(base_dates, city_elem)
 
-    def close(self):
-        self._fc.close()
-        self._fs.close()
-
-    #def write_json_combined(self, file_name):
-    #    self._panda_to_jsonfile(    (self.wc.get_dict_values()), file_name)     
-
-    #def write_json_separate(self, file_name):
-    #    self._panda_to_jsonfile(pd.Series(self.ws.get_dict_values()), file_name)     
-
-    
     def _print_data(self, weather_data):
         for row in weather_data.iterrows():
             # row is tuple (index, columns)
