@@ -10,17 +10,19 @@ RUN tar -xzf v1.1.0.tar.gz
 
 # Basemap requires additional dependency geos whose source code is included in basemap
 WORKDIR /weather/basemap-1.1.0/geos-3.3.3
-RUN export GEOS_DIR=/weather/geos/
+ENV GEOS_DIR=/weather/geos/
 RUN ./configure --prefix=$GEOS_DIR
 RUN make; make install
 
 # Now we can install basemap:
 WORKDIR /weather/basemap-1.1.0
-python setup.py install
+RUN python setup.py install
 # Basemap requires pyproj 
 RUN pip install --no-cache-dir pyproj 
 
 # The next step is installation of GRIB API
+RUN apt-get --yes update
+RUN apt-get --yes install cmake
 WORKDIR /weather/tmp
 RUN wget -O grib_api-source.tar.gz https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-1.24.0-Source.tar.gz?api=v2
 RUN tar -xzf grib_api-source.tar.gz
@@ -30,7 +32,7 @@ RUN cmake ../grib_api-1.24.0-Source -DCMAKE_INSTALL_PREFIX=/weather/grib_api/
 # Pygrib installation
 COPY pygrib-master.zip /weather
 WORKDIR /weather
-run unzip pygrib-master.zip
+RUN unzip pygrib-master.zip
 COPY setup.cfg /weather/pygrib-master
 WORKDIR /weather/pygrib-master
 RUN python setup.py build
