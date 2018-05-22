@@ -366,3 +366,5 @@ ecbuild_info("   | For more details, please see:                                
 ecbuild_info("   |   https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home                                  | ")
 ecbuild_info("   +---------------------------------------------------------------------------------------------+ ")
 ecbuild_info("")
+
+
