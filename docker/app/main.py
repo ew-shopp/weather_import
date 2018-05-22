@@ -23,8 +23,9 @@ wf2j01 = Weather_forecast_2_json(we,
             '/out/germany_cities_201701_forecast_combined.json',
             '/out/germany_cities_201701_forecast_separate.json')
             
-for i in range(len(csv)):
-    print "City: i %d city %s" % (i, csv.loc[i,"City"])
+#for i in range(len(csv)):
+for i in range(3):
+    print 'City: i %d city %s' % (i, csv.loc[i,'City'])
     wf2j01.fetch_forecast(date(2017,1,1), date(2017,1,31), csv.loc[i])
             
 print 'Ending program'
