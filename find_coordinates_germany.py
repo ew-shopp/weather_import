@@ -19,7 +19,7 @@ several_in_match = 0
 no_match = 0
 
 f_out= open("match.csv","w+")
-f_out.write('City,Latitude,Longitude\n')
+#f_out.write('City,Latitude,Longitude\n')
 
 print len(geoname_cities)
 print"Matches\tSearch_type\tjot_city\tgeo_name_city\tlat\tlon\tdist_from_first\tgeonameid"

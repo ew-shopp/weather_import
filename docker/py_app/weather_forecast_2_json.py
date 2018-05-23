@@ -37,7 +37,8 @@ class Weather_forecast_2_json:
 
         wc = Weather_combined()
         ws = Weather_separate()
-        points = [{'lat': city_elem.Latitude, 'lon': city_elem.Longitude}]
+        #points = [{'lat': city_elem.Latitude, 'lon': city_elem.Longitude}]
+        points = [{'lat': city_elem.loc[1], 'lon': city_elem.loc[2]}]
         for bd in base_dates:
             base_date = bd.date()
             base_date_plus_16 = (bd+16).date() # Forecase the next 16 days (probably only 8 present)
@@ -46,8 +47,10 @@ class Weather_forecast_2_json:
                 aggtime='hour', aggloc='points',
                 interp_points=points)
         
-            wc.add_city_weather_data(city_elem.City, weather_data)
-            ws.add_city_weather_data(city_elem.City, weather_data)
+            # wc.add_city_weather_data(city_elem.City, weather_data)
+            # ws.add_city_weather_data(city_elem.City, weather_data)
+            wc.add_city_weather_data(city_elem.loc[0], weather_data)
+            ws.add_city_weather_data(city_elem.loc[0], weather_data)
         self._write_to_json(self._fc, wc)
         self._write_to_json(self._fs, ws)
         

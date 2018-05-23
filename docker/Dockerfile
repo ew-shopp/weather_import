@@ -55,10 +55,9 @@ RUN python setup.py install
 RUN pip install --no-cache-dir pandas
 RUN pip install --no-cache-dir geopy 
 
-COPY ./app /weather/weather-data-master/weather_import
+COPY ./py_app /weather/weather-data-master/weather_import
+COPY ./bash_scripts /code
 
-WORKDIR /weather/weather-data-master/weather_import
-
-CMD [ "python", "/weather/weather-data-master/weather_import/main.py" ]
+ENTRYPOINT ["/code/supervisor_sigterm.sh"]
 
 

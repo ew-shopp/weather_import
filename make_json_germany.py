@@ -20,7 +20,21 @@ def print_data(weather_data):
 
  
 def panda_to_jsonfile(pd, file_name):
-    pd.to_json(path_or_buf=file_name, orient='records', date_format='iso', date_unit='s')        
+    pd.to_json(path_or_buf=file_name, orient='records', date_format='iso', date_unit='s')     
+    
+def get_forecast_daterange(base_dates, wc, ws, city_elem):
+
+    for bd in base_dates:
+        base_date = bd.date()
+        base_date_plus_16 = (bd+16).date() # Forecase the next 16 days (probably only 8 present)
+        points = [{'lat': city_elem.Latitude, 'lon': city_elem.Longitude}]
+        weather_data = we.get_forecast(base_date=base_date, 
+            from_date=base_date, to_date=base_date_plus_16, 
+            aggtime='hour', aggloc='points',
+            interp_points=points)
+    
+        wc.add_city_weather_data(city_elem.City, weather_data)
+        ws.add_city_weather_data(city_elem.City, weather_data)
     
 # query the downloaded data
 we = WeatherExtractor()
@@ -35,16 +49,14 @@ csv = pd.read_csv('german_coordinates.csv')
 
 wc = Weather_combined()
 ws = Weather_separate()
-for i in range(len(csv)):
-    print "i %d city %s" % (i, csv.loc[i,"City"])
+#for i in range(len(csv)):
+for i in range(3):
+    print "City: i %d city %s" % (i, csv.loc[i,"City"])
+    #base_dates = pd.date_range(date(2017,1,1), date(2017,1,31))
+    base_dates = pd.date_range(date(2017,1,1), date(2017,1,3))
 
-    points = [{'lat': csv.loc[i,"Latitude"], 'lon': csv.loc[i,"Longitude"]}]
-    weather_data = we.get_forecast(base_date=date(2017, 1, 1), from_date=date(
-            2017, 1, 1), to_date=date(2017, 12, 31), aggtime='hour', aggloc='points',
-            interp_points=points)
-            
-    wc.add_city_weather_data(csv.loc[i,"City"], weather_data)
-    ws.add_city_weather_data(csv.loc[i,"City"], weather_data)
+    get_forecast_daterange(base_dates, wc, ws, csv.loc[i])
+
     
     
 print 'Generate the result forecast'
