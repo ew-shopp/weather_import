@@ -1,0 +1,82 @@
+(2)<0>	IN:	konigsberg	P	konigsberg in bayern	50.080800	10.567610	0.000000km	2885916
+(2)<0>	IN:	konigsberg	P	dorflis bei konigsberg	50.043660	10.659890	7.792656km	2936046
+(3)<0>	IN:	heppenheim	P	heppenheim an der wiese	49.605570	8.267810	0.000000km	2906267
+(3)<0>	IN:	heppenheim	P	heppenheim an der bergstrasse	49.641450	8.632060	26.619348km	2906268
+(3)<0>	IN:	heppenheim	P	gau-heppenheim	49.742220	8.173330	16.658420km	2922276
+(2)<0>	IN:	schwedt	P	schwedt (oder)	53.059630	14.281540	0.000000km	2834629
+(2)<0>	IN:	schwedt	P	schwedt - monplaisir	53.071130	14.267460	1.590215km	2869764
+(2)<0>	IN:	cologne	P	roman-catholic archdiocese of cologne	50.941110	6.957900	0.000000km	11778268
+(2)<0>	IN:	cologne	P	archdioces cologne	50.941050	6.957960	0.007895km	11778269
+(6)<0>	IN:	buren	P	wesselburenerkoog	54.250000	8.883330	0.000000km	2810617
+(6)<0>	IN:	buren	P	wesselburener deichhausen	54.166670	8.933330	9.832379km	2810618
+(6)<0>	IN:	buren	P	wesselburen	54.212170	8.924190	4.983071km	2810619
+(6)<0>	IN:	buren	P	thalingburen	54.106410	9.031890	18.696090km	2823062
+(6)<0>	IN:	buren	P	emsburen	52.400000	7.300000	231.332492km	2930454
+(6)<0>	IN:	buren	P	dollenburen	54.250000	9.066670	11.950508km	2936376
+(2)<0>	IN:	duren	P	oberdurenbach	50.466670	7.166670	0.000000km	2861038
+(2)<0>	IN:	duren	P	niederdurenbach	50.450000	7.183330	2.199587km	2863505
+(16)<0>	IN:	mucke	P	muckers	51.821800	14.076140	0.000000km	2868877
+(16)<0>	IN:	mucke	P	muckern	51.214080	12.462370	130.836752km	2868878
+(16)<0>	IN:	mucke	P	muckenthal	49.886410	12.142750	254.715703km	2868884
+(16)<0>	IN:	mucke	P	muckental	49.425620	9.204020	435.637454km	2868887
+(16)<0>	IN:	mucke	P	muckental	48.995220	10.199390	417.978790km	2868888
+(16)<0>	IN:	mucke	P	muckenschopf	48.694330	7.987580	556.040100km	2868891
+(16)<0>	IN:	mucke	P	muckenreuth	50.005180	11.493680	271.677125km	2868892
+(16)<0>	IN:	mucke	P	muckenreuth	49.938740	11.777180	264.662096km	2868893
+(16)<0>	IN:	mucke	P	muckenloch	49.390160	8.859580	457.570625km	2868896
+(16)<0>	IN:	mucke	P	muckendorf	48.741890	12.065550	371.319654km	2868908
+(16)<0>	IN:	mucke	P	muckenberg	48.221080	8.331530	574.028336km	2868912
+(16)<0>	IN:	mucke	P	muckenbach	49.199540	12.302630	317.643589km	2868919
+(16)<0>	IN:	mucke	P	muckeln	50.083330	6.916670	538.699200km	2868920
+(16)<0>	IN:	mucke	P	dreiskau-muckern	51.216770	12.466480	130.435126km	2935087
+(16)<0>	IN:	mucke	P	muckenwinkling	48.931980	12.659110	336.868465km	3206686
+(16)<0>	IN:	mucke	P	muckensturm	48.822000	9.236500	479.528056km	11807668
+(11)<0>	IN:	brake	P	telbrake	52.735430	8.329780	0.000000km	2823598
+(11)<0>	IN:	brake	P	oberbrake	52.730290	8.896820	38.308220km	2861225
+(11)<0>	IN:	brake	P	lehmbraken	51.785640	7.226650	129.775276km	2879504
+(11)<0>	IN:	brake	P	brake zwei	52.066670	8.616670	76.935254km	2945530
+(11)<0>	IN:	brake	P	brakenburg	53.500000	9.883330	134.380291km	2945534
+(11)<0>	IN:	brake	P	brakelsiek	51.891330	9.168520	109.970398km	2945538
+(11)<0>	IN:	brake	P	brakel	51.717500	9.185960	127.481144km	2945542
+(11)<0>	IN:	brake	P	brake (lemgo)	52.014580	8.921240	89.757096km	2945543
+(11)<0>	IN:	brake	P	brake (unterweser)	53.333330	8.483330	67.331001km	2945545
+(11)<0>	IN:	brake	P	brake (bielefeld)	52.069060	8.596120	76.333770km	2945547
+(11)<0>	IN:	brake	P	barbrake	52.760930	8.967100	43.129740km	2952840
+(5)<0>	IN:	annweiler	P	tannweiler	48.735450	9.840700	0.000000km	2824022
+(5)<0>	IN:	annweiler	P	tannweiler	47.926100	9.685140	90.733159km	2824023
+(5)<0>	IN:	annweiler	P	mannweiler	49.700000	7.800000	183.319054km	2873864
+(5)<0>	IN:	annweiler	P	annweiler am trifels	49.206130	7.975270	146.258717km	2955951
+(5)<0>	IN:	annweiler	P	mannweiler-colln	49.683330	7.783330	183.253021km	3207531
+(5)<3>	IN:	schwandorf	P	unterschwandorf	48.540390	8.676160	0.000000km	2818720
+(5)<3>	IN:	schwandorf	P	unterschwandorf	47.951280	8.995900	69.677520km	2818721
+(5)<3>	IN:	schwandorf	P	schwandorf in bayern	49.325340	12.109800	266.267642km	2835297
+(5)<3>	IN:	schwandorf	P	oberschwandorf	48.551280	8.662280	1.586423km	2859083
+(5)<3>	IN:	schwandorf	P	oberschwandorf	47.959280	8.983160	68.520714km	2859084
+(5)<3>	IN:	schwandorf	A	schwandorf	47.950000	9.000000	69.915605km	2835299
+(5)<3>	IN:	schwandorf	A	schwandorf	47.963230	8.963990	67.643187km	2835300
+(5)<3>	IN:	schwandorf	A	schwandorf	49.323600	12.099350	265.485222km	6558284
+(18)<0>	IN:	eningen	P	wieningen	51.899830	7.847190	0.000000km	2809442
+(18)<0>	IN:	eningen	P	teningen	48.129520	7.812050	419.376414km	2823504
+(18)<0>	IN:	eningen	P	spaeningen	52.735250	11.575440	270.656368km	2830825
+(18)<0>	IN:	eningen	P	schoeningen	52.138020	10.967450	215.819002km	2836543
+(18)<0>	IN:	eningen	P	rueningen	52.221230	10.504050	185.686340km	2843043
+(18)<0>	IN:	eningen	P	plieningen	48.700800	9.216640	368.959464km	2853199
+(18)<0>	IN:	eningen	P	oeningen	53.001730	9.904760	186.004110km	2857909
+(18)<0>	IN:	eningen	P	loeningen	52.736780	7.758090	93.328217km	2875987
+(18)<0>	IN:	eningen	P	kloster groeningen	51.936540	11.198110	230.569640km	2887499
+(18)<0>	IN:	eningen	P	hoeningen	51.092360	6.691450	120.465716km	2899346
+(18)<0>	IN:	eningen	P	hoeningen	49.491100	8.076110	268.440267km	2899347
+(18)<0>	IN:	eningen	P	grueningen	52.297790	12.454070	318.728489km	2914144
+(18)<0>	IN:	eningen	P	grueningen	51.229570	10.971630	229.107802km	2914145
+(18)<0>	IN:	eningen	P	grueningen	50.509930	8.730010	166.480841km	2914146
+(18)<0>	IN:	eningen	P	groeningen	52.850000	10.866670	231.198013km	2917106
+(18)<0>	IN:	eningen	P	groeningen	51.937440	11.216010	231.800164km	2917107
+(18)<0>	IN:	eningen	P	graeningen	52.578880	12.472250	324.789629km	2918102
+(18)<0>	IN:	eningen	P	eningen unter achalm	48.486860	9.259460	392.779534km	2930080
+(2)<0>	IN:	gunzburg	P	riedhausen bei gunzburg	48.507730	10.251870	0.000000km	2847155
+(2)<0>	IN:	gunzburg	P	obergunzburg	47.845450	10.418210	74.673177km	2860540
+(2)<0>	IN:	prum	P	prumzurlay	49.866670	6.433330	0.000000km	2851818
+(2)<0>	IN:	prum	P	prummern	50.969130	6.168060	124.074975km	2851820
+(3)<0>	IN:	garching	P	obergarching	48.124910	12.567160	0.000000km	2860656
+(3)<0>	IN:	garching	P	garching bei munchen	48.248960	11.651010	69.502698km	2922582
+(3)<0>	IN:	garching	P	garching an der alz	48.134510	12.581520	1.510651km	2922583
