@@ -2,3 +2,5 @@
 weather-env/bin/
 
 weather-env/
+
+*.pyc
