@@ -1,0 +1,25 @@
+(7)<0>	EQ:	mulheim (moselle)	P	muelheim	49.912520	7.019490	169.338602km	2867844
+(63)<2>	EQ:	oberndorf am lech	P	oberndorf	48.669180	10.867490	577.806728km	2859641
+(0)		 kernen		48.811505	9.319752
+(3)<0>	EQ:	selters(westerwald)	P	selters	50.532530	7.755770	0.000000km	2833138
+(0)		 kirchheim bei munchen		48.174628	11.752310
+(7)<0>	EQ:	mulheim-karlich	P	muelheim	50.383330	7.500000	124.570773km	2867843
+(7)<0>	EQ:	mulheim	P	muelheim	51.432180	6.879670	0.000000km	2867838
+(2)<0>	EQ:	stolberg (rhineland)	P	stolberg	50.773680	6.225950	342.494022km	2826595
+(0)		 bergen auf rugen		54.416045	13.432510
+(2)<0>	IN:	florsheim am main	P	floersheim	50.013110	8.427790	41.614475km	2926120
+(0)<2>	No match:	sudbrookmerland	A	suedbrookmerland	53.475500	7.351630	516.753889km	6558476
+(13)<3>	EQ:	altdorf bei nurnberg	P	altdorf	49.385600	11.357300	208.368179km	2958024
+(2)<0>	IN:	schmolln	P	schmoelln	50.896780	12.353390	134.148781km	2837652
+(2)<0>	EQ:	furstenwalde	P	fuerstenwalde	52.360670	14.061850	0.000000km	2923588
+(2)<0>	EQ:	ruhstorf an der rott	P	ruhstorf	48.436170	13.335700	49.599175km	2843186
+(2)<0>	IN:	dallgow-doberitz	P	doeberitz	52.516670	13.050000	2.173031km	2936637
+(0)<2>	No match:	gaufelden	A	gaeufelden	48.553090	8.822880	111.702423km	3209424
+(2)<0>	IN:	delbruck	P	delbrueck	51.765030	8.562230	184.184717km	2938389
+(7)<2>	EQ:	erbach im odenwald	P	erbach	49.661480	8.994020	133.086353km	2929802
+(0)		 muhlenbecker land		52.673833	13.372851
+(0)		 lohr a. main		50.005707	9.579414
+(6)<0>	IN:	dobeln	P	keuern	51.129020	13.080830	4.208568km	2891275
+(0)<2>	No match:	walddorfhaslach	A	walddorfhaeslach	48.586800	9.183030	549.711528km	2815115
+(2)<0>	IN:	konigs wusterhausen	P	koenigs wusterhausen	52.301410	13.633000	2.302215km	2885732
+
