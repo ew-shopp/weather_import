@@ -22,7 +22,7 @@ echo '#'
 echo '#   Starting: Main'
 echo '#'
 
-
+wait_count=0
 lock_file="${input_directory}/dir_rw.lock"
 
 while [ -f $tmp_file ]; do
@@ -84,6 +84,7 @@ while [ -f $tmp_file ]; do
     exec 9>&-
 
     if [ $new_file_to_process == "yes" ]; then
+        wait_count=0
         # Move renamed file to Workspace
         echo "   Moving to Workspace"
         echo ${input_path_renamed}
@@ -95,7 +96,12 @@ while [ -f $tmp_file ]; do
         # Run the job as a subprocess passing all variables
         source /code/run_job.sh 
     else
-        echo '// Sleeping 60 Seconds'
+        wait_count=$((wait_count+1))
+        echo "// Sleeping 60 Seconds $wait_count"
+        if [[ $wait_count -gt 10 ]];  then
+            echo "Terminating idle script"
+            exit 0
+        fi
         sleep 60
     fi
 done
