@@ -20,7 +20,8 @@ mkdir -p ${work_directory}/results
 # Uploading
 echo "   Starting python script"
 cd /weather/weather-data-master/weather_import
-python main.py ${grib_file} ${work_path} ${work_path_results}
+echo "Running:  python main.py ${grib_file} ${work_path} ${work_path_results} ${start_yy} ${start_mm} ${start_dd} ${end_yy} ${end_mm} ${end_dd}"
+python main.py ${grib_file} ${work_path} ${work_path_results} ${start_yy} ${start_mm} ${start_dd} ${end_yy} ${end_mm} ${end_dd}
 
 
 # Run move_to_output as a subprocess passing all variables

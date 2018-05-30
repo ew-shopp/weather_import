@@ -4,18 +4,36 @@
 # arg3: work directory
 # arg4: output directory
 # arg5: grib_file
+# arg6: start year 
+# arg7: start month
+# arg8: start date
+# arg9: end year
+# arg10: end month
+# arg11: end date
 
 tmp_file=${1}
 input_directory=${2}
 work_directory=${3}
 output_directory=${4}
 grib_file=${5}
-
+start_yy=${6}
+start_mm=${7}
+start_dd=${8}
+end_yy=${9}
+end_mm=${10}
+end_dd=${11}
+-
 echo ${tmp_file}
 echo ${input_directory}
 echo ${work_directory}
 echo ${output_directory}
 echo ${grib_file}
+echo ${start_yy}
+echo ${start_mm}
+echo ${start_dd}
+echo ${end_yy}
+echo ${end_mm}
+echo ${end_dd}
 echo '***'
 
 echo '#'
