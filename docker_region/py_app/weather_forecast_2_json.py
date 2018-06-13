@@ -67,7 +67,7 @@ class Weather_forecast_2_json:
         ll = [region_elem.loc[6], region_elem.loc[7]]
         # bounding box defined by its corner points with latitudes and longitudes: (45.45, 13.70) and (46.85, 16.56) """
         # bounding_box = [[45.45, 13.70], [46.85, 16.56]]
-
+        bounding_box = [ur, ll]
         for bd in base_dates:
             base_date = bd.date()
             base_date_plus_16 = (bd+16).date() # Forecase the next 16 days (probably only 8 present)
@@ -77,10 +77,8 @@ class Weather_forecast_2_json:
                 bounding_box=bounding_box)
 
 
-            def add_region_weather_data(self, region, str_region, geoname_id, weather_data):
-
-            wc.add_city_weather_data(region_elem.loc[1], region_elem.loc[0], region_elem.loc[3], weather_data)
-            ws.add_city_weather_data(region_elem.loc[1], region_elem.loc[0], region_elem.loc[3], weather_data)
+            wc.add_region_weather_data(region_elem.loc[1], region_elem.loc[0], region_elem.loc[3], weather_data)
+            ws.add_region_weather_data(region_elem.loc[1], region_elem.loc[0], region_elem.loc[3], weather_data)
         self._write_to_json(self._fc, wc)
         self._write_to_json(self._fs, ws)
         
