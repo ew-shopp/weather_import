@@ -4,3 +4,7 @@ weather-env/bin/
 weather-env/
 
 *.pyc
+
+run_daily/
+
+curl_test/
