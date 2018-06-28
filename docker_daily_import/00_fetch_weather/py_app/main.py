@@ -9,6 +9,7 @@
 #}
 
 from datetime import date
+from datetime import datetime
 
 from weather.weather import WeatherExtractor, WeatherApi
 from ewshopp_area import EwArea
@@ -29,15 +30,12 @@ grib_file = grib_result_base+'.grib'
 
 job = pd.read_json(job_json_file, typ="series")
 
-start_yy = job.loc['start_yy']
-start_mm = job.loc['start_mm']              
-start_dd = job.loc['start_dd']
-end_yy = job.loc['end_yy']
-end_mm = job.loc['end_mm'] 
-end_dd = job.loc['end_dd']
+date_format = '%Y%m%d'
+start_date_string = str(job.loc['start_date'])
+end_date_string = str(job.loc['end_date'])
 
-start_date = date(start_yy, start_mm, start_dd)
-end_date = date(end_yy, end_mm, end_dd)
+start_date = datetime.strptime(start_date_string.strip(), date_format).date()
+end_date = datetime.strptime(end_date_string.strip(), date_format).date()
 
 ## Hack for requesting one day
 ## For a get request the start_date has to be before the end_date. Resulting in minimum two days
@@ -45,7 +43,7 @@ end_date = date(end_yy, end_mm, end_dd)
 start_get_date = (pd.Timestamp(start_date, freq='D')-1).date()
 
 print "grib:%s  region_coordinates:%s out_result_base:%s grib_result_base:%s" % (grib_file, region_coordinates_csv_file, out_result_base, grib_result_base)
-print "Get data from ECMWF - start_get_date:%s  end_date:%s" % (start_get_date.strftime('%Y %B %d'), end_date.strftime('%Y %B %d'))
+print "Get data from ECMWF - start_get_date:%s  end_date:%s" % (start_get_date.strftime(date_format), end_date.strftime(date_format))
 
 print 'Requesting germay forecast'
 
@@ -60,7 +58,7 @@ print 'Stored forecast'
 
 
 print "Extracting data from grib file based on Region bounding box coordinates"
-print "start_date:%s  end_date:%s" % (start_date.strftime('%Y %B %d'), end_date.strftime('%Y %B %d'))
+print "start_date:%s  end_date:%s" % (start_date.strftime(date_format), end_date.strftime(date_format))
 # query the downloaded data
 
 # load forecasted weather data
