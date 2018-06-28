@@ -11,7 +11,6 @@ RUN apt-get --yes install build-essential python-dev
 RUN apt-get --yes install wget
 RUN pip install  pyopenssl ndg-httpsclient pyasn1
 
-
 WORKDIR /weather
 #RUN virtualenv weather-env
 
@@ -65,12 +64,15 @@ RUN python setup.py build
 RUN python setup.py install
 
 # Weather lib installation
+
 COPY weather-data-master.zip /weather
 WORKDIR /weather
 RUN unzip weather-data-master.zip
 WORKDIR /weather/weather-data-master
 RUN python setup.py install
 
+
+# Application
 RUN pip install --no-cache-dir pandas
 RUN pip install --no-cache-dir geopy 
 
@@ -78,7 +80,11 @@ COPY ./py_app /weather/weather-data-master/weather_import
 COPY ./bash_scripts /code
 COPY ./common_scripts /code
 
-ENTRYPOINT ["/code/main.sh"]
+# Make rw access for all users
+RUN chmod 777 /weather; \
+    chmod 777 /weather/weather-data-master; \
+    chmod 777 /weather/weather-data-master/weather_import
 
+ENTRYPOINT ["/code/main.sh"]
 
 

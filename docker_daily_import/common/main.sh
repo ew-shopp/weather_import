@@ -31,6 +31,12 @@ run_file_name=`mktemp -t -p ${work_directory}/run`
 
 trap gracefulshutdown SIGINT SIGTERM
 
+# Execute init if present
+init_script="${code_directory}/init.sh"
+if [ -f "$init_script" ]; then
+   $init_script
+fi
+
 echo "Main - Starting $run_file_name"
 $cmd_to_run $run_file_name "$@" &
 pid=$!

@@ -28,24 +28,33 @@ echo '#'
 # Construct Paths
 file_name=${work_path##*/}
 file_name_no_ext=${file_name%.*}
-work_path_results=${work_directory}/${file_name_no_ext}
-work_path_grib=${work_directory}/grib/${file_name_no_ext}
+work_path_results=${work_directory}/${file_name_no_ext}_weather_
+work_dir_grib=${work_directory}/grib/
+local_path_grib=grib/${file_name_no_ext}_weather_
 
 
 # Debug: Show Paths
 #echo "!! work_path", ${work_path}
 echo "!! work_path_results", ${work_path_results}
+echo "!! work_dir_grib", ${work_dir_grib}
 echo "!! work_path_grib", ${work_path_grib}
 
 # File is in the work dir ... ready to be processed
 
-# Make grib dir if not there
+# Make grib dir in work dir if not there
 mkdir -p ${work_directory}/grib
 
 echo "   Starting python script"
 cd /weather/weather-data-master/weather_import
-echo "Running:  python main.py ${work_path} ${regions_csv} ${work_path_results} ${work_path_grib} "
-python main.py ${work_path} ${regions_csv} ${work_path_results} ${work_path_grib} 
+
+# Make grib dir locally if not there
+mkdir -p grib
+
+echo "Running:  python main.py ${work_path} ${regions_csv} ${work_path_results} ${local_path_grib} "
+python main.py ${work_path} ${regions_csv} ${work_path_results} ${local_path_grib} 
+
+# Move grib file to work dir
+mv ${local_path_grib}*  ${work_dir_grib}
 
 # Move the files to output
 ${code_directory}/move_to_output.sh ${output_directory} ${work_path_results}*

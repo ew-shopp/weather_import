@@ -53,11 +53,22 @@ if flock 9; then   # Blocking wait
         input_path_renamed=${input_path}.inmove
         work_path=${work_directory}/${file_name}
 
-        # Call script to check if file is complete - exit 0 if complete
-        ${code_directory}/check_input_file.sh ${input_path}
-        retn_code=$?
+        # Execute test if present
+	check_ok=1  # Assume of if no check present
+        check_script="${code_directory}/check_input_file.sh"
+        if [ -f "$check_script" ]; then
+           # Call script to check if file is complete - exit 0 if complete
+           ${check_script} ${input_path}
+           retn_code=$?
+
+           if [ ${retn_code} -eq 0 ]; then
+              check_ok=1
+           else
+              check_ok=0
+           fi
+        fi
     
-        if [ ${retn_code} -eq 0 ]; then
+        if [ ${check_ok} -eq 1 ]; then
             # File is ok ... use file
 
             # Check if file already there
