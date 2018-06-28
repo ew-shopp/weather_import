@@ -37,22 +37,22 @@ end_mm = job.loc['end_mm']
 end_dd = job.loc['end_dd']
 
 start_date = date(start_yy, start_mm, start_dd)
-end_get_date = date(end_yy, end_mm, end_dd)
+end_date = date(end_yy, end_mm, end_dd)
 
 ## Hack for requesting one day
 ## For a get request the start_date has to be before the end_date. Resulting in minimum two days
 ## For a fetch request the start_date and end_date can be equal. Resulting in minimum one day
-end_fetch_date = (pd.Timestamp(end_get_date, freq='D')-1).date()
+start_get_date = (pd.Timestamp(start_date, freq='D')-1).date()
 
 print "grib:%s  region_coordinates:%s out_result_base:%s grib_result_base:%s" % (grib_file, region_coordinates_csv_file, out_result_base, grib_result_base)
-print "Get data from ECMWF - start_date:%s  end_date:%s" % (start_date.strftime('%Y %B %d'), end_get_date.strftime('%Y %B %d'))
+print "Get data from ECMWF - start_get_date:%s  end_date:%s" % (start_get_date.strftime('%Y %B %d'), end_date.strftime('%Y %B %d'))
 
 print 'Requesting germay forecast'
 
 wa = WeatherApi()
 
 # download forecast data 
-wa.get(from_date=start_date, to_date=end_get_date,
+wa.get(from_date=start_get_date, to_date=end_date,
        area=EwArea.Germany, 
        target=grib_file)
 
@@ -60,7 +60,7 @@ print 'Stored forecast'
 
 
 print "Extracting data from grib file based on Region bounding box coordinates"
-print "start_date:%s  end_date:%s" % (start_date.strftime('%Y %B %d'), end_fetch_date.strftime('%Y %B %d'))
+print "start_date:%s  end_date:%s" % (start_date.strftime('%Y %B %d'), end_date.strftime('%Y %B %d'))
 # query the downloaded data
 
 # load forecasted weather data
@@ -76,7 +76,7 @@ wf2j = Weather_forecast_2_json(we,
             
 for i in range(len(csv)):
     print 'Region: i %d %s' % (i, csv.loc[i,1])
-    wf2j.fetch_forecast_region(start_date, end_fetch_date, csv.loc[i])
+    wf2j.fetch_forecast_region(start_date, end_date, csv.loc[i])
             
 print 'Ending program'
 
