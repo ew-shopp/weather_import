@@ -1,13 +1,32 @@
-FROM python:2
+FROM ubuntu:16.04
+#FROM python:2
+
+RUN apt-get --yes update
+RUN apt-get --yes install python; python --version
+RUN apt-get --yes install python-pip; pip --version
+RUN pip install --upgrade pip
+#RUN easy_install -U pip; python --version; pip --version
+#RUN sudo pip install virtualenv; virtualenv --version
+RUN apt-get --yes install build-essential python-dev
+RUN apt-get --yes install wget
+RUN pip install  pyopenssl ndg-httpsclient pyasn1
+
+
 WORKDIR /weather
+#RUN virtualenv weather-env
 
 RUN pip install --no-cache-dir numpy 
 RUN pip install --no-cache-dir https://software.ecmwf.int/wiki/download/attachments/56664858/ecmwf-api-client-python.tgz
 
 # In order to install pygrib we first have to install matplotlib with basemap toolkit
-RUN pip install --no-cache-dir matplotlib 
+#RUN pip install --no-cache-dir matplotlib 
+RUN pip install --no-cache-dir matplotlib  --ignore-installed six
 RUN wget https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz
 RUN tar -xzf v1.1.0.tar.gz
+
+# Install g++ to fix ISNAN bug...
+#RUN apt-get --yes update
+#RUN apt-get --yes install g++
 
 # Basemap requires additional dependency geos whose source code is included in basemap
 WORKDIR /weather/basemap-1.1.0/geos-3.3.3
@@ -22,7 +41,7 @@ RUN python setup.py install
 RUN pip install --no-cache-dir pyproj 
 
 # The next step is installation of GRIB API
-RUN apt-get --yes update
+#RUN apt-get --yes update
 RUN apt-get --yes install cmake
 
 WORKDIR /weather/tmp
