@@ -28,9 +28,9 @@ echo '#'
 # Construct Paths
 file_name=${work_path##*/}
 file_name_no_ext=${file_name%.*}
-work_path_results=${work_directory}/${file_name_no_ext}_weather_
+work_path_results=${work_directory}/${file_name_no_ext}_weather
 work_dir_grib=${work_directory}/grib/
-local_path_grib=grib/${file_name_no_ext}_weather_
+local_path_grib=grib/${file_name_no_ext}_weather
 
 
 # Debug: Show Paths
