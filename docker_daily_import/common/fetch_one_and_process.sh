@@ -50,6 +50,7 @@ if flock 9; then   # Blocking wait
 
         # Construct Paths
         file_name=${input_path##*/}
+        file_name_no_ext=${file_name%.*}
         input_path_renamed=${input_path}.inmove
         work_path=${work_directory}/${file_name}
 
@@ -107,7 +108,21 @@ if [ $new_file_to_process == "yes" ]; then
     # File are now in the work dir ... ready to be processed
 
     # Run the job 
-    ${process_job} "${work_path}" "$@"
+    if [ "${LOG_JOBS}" -eq "1" ]; then
+        log_directory=${work_directory}/logs
+        mkdir -p $log_directory
+        log_file=${log_directory}/${file_name_no_ext}.log
+
+	start_process=$(date)
+        ${process_job} "${work_path}" "$@" 2>&1 | tee ${log_file}
+	end_process=$(date)
+
+	# Append to common log file
+	${code_directory}/append_to_log_common.sh "${log_directory}" "${start_process}" "${end_process}" ${log_file} 
+        
+    else
+        ${process_job} "${work_path}" "$@"
+    fi
     exit 0
 else
     exit 1

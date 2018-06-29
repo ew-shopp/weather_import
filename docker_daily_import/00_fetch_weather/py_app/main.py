@@ -30,7 +30,7 @@ grib_file = grib_result_base+'.grib'
 
 job = pd.read_json(job_json_file, typ="series")
 
-date_format = '%Y%m%d'
+date_format = '%Y-%m-%d'
 start_date_string = str(job.loc['start_date'])
 end_date_string = str(job.loc['end_date'])
 

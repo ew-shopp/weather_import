@@ -21,6 +21,8 @@ echo "run_file_name: ${run_file_name}"
 echo "retry_max_count: ${retry_max_count}"
 echo "code_directory: ${code_directory}"
 echo "input_directory: ${input_directory}"
+echo "work_directory: ${work_directory}"
+echo "output_directory: ${output_directory}"
 echo '***'
 
 echo '#'

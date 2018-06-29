@@ -37,19 +37,14 @@ echo '#'
 # Construct Paths
 file_name=${work_path##*/}
 file_name_no_ext=${file_name%.*}
-log_file=${work_directory}/${file_name_no_ext}.log
-
 
 # Debug: Show Paths
 #echo "!! work_path", ${work_path}
-echo "!! log_file", ${log_file}
 
 # File is in the work dir ... ready to be processed
 
 # Upload the file
-curl --data-binary "@${work_path}" -v -u "${usr_pwd}" -H "Content-Type: application/json" -X POST  "${server_addr}/_db/${db_name}/_api/import?collection=${collection_name}&type=auto&onDuplicate=error"  2>&1 | tee ${log_file}
-
-# cat ${log_file}
+curl --data-binary "@${work_path}" -v -u "${usr_pwd}" -H "Content-Type: application/json" -X POST  "${server_addr}/_db/${db_name}/_api/import?collection=${collection_name}&type=auto&onDuplicate=error" 
 
 
 # Move the files to output

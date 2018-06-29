@@ -19,6 +19,11 @@ input_directory=${3}
 work_directory=${4}
 output_directory=${5}
 
+echo "Arguments"
+for i in $*; do 
+   echo $i 
+done
+echo "***" 
 
 # Worker script to run
 cmd_to_run="${code_directory}/main_worker.sh"
