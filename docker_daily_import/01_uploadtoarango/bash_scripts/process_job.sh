@@ -37,9 +37,10 @@ echo '#'
 # Construct Paths
 file_name=${work_path##*/}
 file_name_no_ext=${file_name%.*}
+out_file_path=${work_directory}/${file_name_no_ext}.trig
 
 # Debug: Show Paths
-#echo "!! work_path", ${work_path}
+echo "!! out_file_path", ${out_file_path}
 
 # File is in the work dir ... ready to be processed
 
@@ -47,8 +48,9 @@ file_name_no_ext=${file_name%.*}
 curl --data-binary "@${work_path}" -v -u "${usr_pwd}" -H "Content-Type: application/json" -X POST  "${server_addr}/_db/${db_name}/_api/import?collection=${collection_name}&type=auto&onDuplicate=error" 
 
 
+touch ${out_file_path}
 # Move the files to output
-# ${code_directory}/move_to_output.sh ${output_directory} ${extract_directory}/*
+${code_directory}/move_to_output.sh ${output_directory} ${out_file_path}
 
 echo '   Done'
 
