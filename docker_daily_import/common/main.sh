@@ -25,6 +25,15 @@ for i in $*; do
 done
 echo "***" 
 
+echo "********* Listing of ${code_directory}"
+ls -l ${code_directory}
+echo "********* Listing of ${input_directory}"
+ls -l ${input_directory}
+echo "********* Listing of ${work_directory}"
+ls -l ${work_directory}
+echo "********* Listing of ${output_directory}"
+ls -l ${output_directory}
+
 # Worker script to run
 cmd_to_run="${code_directory}/main_worker.sh"
 
