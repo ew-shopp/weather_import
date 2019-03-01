@@ -17,7 +17,7 @@ from ewshopp_area import EwArea
 import pandas as pd
 import sys
 
-from weather_forecast_2_json import Weather_forecast_2_json
+from weather_forecast_2_csv import Weather_forecast_2_csv
 
 ## python main.py  ${work_path_grib}
 
@@ -46,8 +46,8 @@ we.load([grib_file])
 print 'get_forecast per entry'
 csv = pd.read_csv(location_coordinates_csv_file, header=None)
 
-wf2j = Weather_forecast_2_json(we,
-            file_name_combined=out_result_base+'_combined.json')
+wf2j = Weather_forecast_2_csv(we,
+            file_name_combined=out_result_base+'_combined.csv')
             
 for i in range(len(csv)):
     print 'Location: i %d %s' % (i, csv.loc[i,0])
