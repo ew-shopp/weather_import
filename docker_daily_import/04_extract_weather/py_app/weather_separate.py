@@ -32,7 +32,7 @@ class Weather_separate:
                     self._dict[common][measure['shortName']+'masked'] = True
                     self._dict[common][measure['shortName']] = np.nan
                     self._dict[common]['value'] = np.nan
-                    increment_element(masked_with_nan, measure['shortName'])
+                    self.increment_element(masked_with_nan, measure['shortName'])
                 else:
                     self._dict[common][measure['shortName']] = val
                     self._dict[common]['value'] = val
@@ -64,7 +64,7 @@ class Weather_separate:
                     self._dict[common][measure['shortName']+'masked'] = True
                     self._dict[common][measure['shortName']] = np.nan
                     self._dict[common]['value'] = np.nan
-                    increment_element(masked_with_nan, measure['shortName'])
+                    self.increment_element(masked_with_nan, measure['shortName'])
                 else:
                     self._dict[common][measure['shortName']] = val
                     self._dict[common]['value'] = val
@@ -75,4 +75,3 @@ class Weather_separate:
     def get_dict_values(self):           
         return self._dict.values()
 
-    

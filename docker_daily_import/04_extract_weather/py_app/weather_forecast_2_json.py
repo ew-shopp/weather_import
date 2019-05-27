@@ -6,8 +6,15 @@ from weather_combined import Weather_combined
 from weather_separate import Weather_separate
 
 class Weather_forecast_2_json:
-    def __init__(self, we, file_name_combined=None, file_name_separate=None):
+    def __init__(self, we, json_format=False, key_map=None, forecast_days=16,
+                 file_name_combined=None, file_name_separate=None):
         self._we = we
+        self._json_format = json_format
+        self._key_map = key_map
+        self._forecast_days = 16 # Forecase the next 16 days (probably only 8 present)
+        if forecast_days is not None:
+            self._forecast_days = forecast_days
+
         self._fc = None
         if file_name_combined != None: 
             self._fc = open(file_name_combined, 'w')
@@ -18,6 +25,7 @@ class Weather_forecast_2_json:
             
         self._file_name_combined = file_name_combined
         self._file_name_separate = file_name_separate
+
     
     def __del__(self):
         if self._fc != None: 
@@ -50,9 +58,9 @@ class Weather_forecast_2_json:
         points = [{'lat': city_elem.loc[1], 'lon': city_elem.loc[2]}]
         for bd in base_dates:
             base_date = bd.date()
-            base_date_plus_16 = (bd+16).date() # Forecase the next 16 days (probably only 8 present)
+            base_date_plus_N = (bd+self._forecast_days).date() # Forecast the next N days
             weather_data = self._we.get_forecast(base_date=base_date, 
-                from_date=base_date, to_date=base_date_plus_16, 
+                from_date=base_date, to_date=base_date_plus_N,
                 aggtime='hour', aggloc='points',
                 interp_points=points)
         
@@ -76,32 +84,59 @@ class Weather_forecast_2_json:
         bounding_box = [ur, ll]
         for bd in base_dates:
             base_date = bd.date()
-            base_date_plus_16 = (bd+16).date() # Forecase the next 16 days (probably only 8 present)
+            base_date_plus_N = (bd+self._forecast_days).date() # Forecase the next N days (probably only 8 present)
             weather_data = self._we.get_forecast(base_date=base_date, 
-                from_date=base_date, to_date=base_date_plus_16, 
+                from_date=base_date, to_date=base_date_plus_N,
                 aggtime='hour', aggloc='bbox',
                 bounding_box=bounding_box)
-
 
             wc.add_region_weather_data(region_elem.loc[1], region_elem.loc[0], region_elem.loc[3], weather_data)
             ws.add_region_weather_data(region_elem.loc[1], region_elem.loc[0], region_elem.loc[3], weather_data)
 
-        if self._fc != None: 
-            self._write_to_json(self._fc, wc)
+        if self._fc != None:
+            self._write_to_file(self._fc, wc)
         if self._fs != None: 
-            self._write_to_json(self._fs, ws)
-        
+            self._write_to_file(self._fs, ws)
 
-    def _write_to_json(self, f, w):
-        d_arr = w.get_dict_values()
-        #print 'Total dict'
-        #print d_arr
-        for d in d_arr:
-            #print 'For dict'
-            #print d
-            pds = pd.Series(d)
-            json_str = pds.to_json(path_or_buf=None, orient='index', date_format='iso', date_unit='s')     
-            print >> f, json_str
-    
+    # return keys key_map also in dataframe
+    def get_common_keys(self, df, drop_missing=True):
+        common_keys = []
+        for k in self._key_map.keys():
+            if k in df.columns:
+                common_keys.append(k)
+            else: # check if append anyway
+                if not drop_missing:
+                    common_keys.append(k)
+        return common_keys
+
+    # Get the subset of the key_map dictionary that should be renamed
+    def get_rename_dict(self, keys):
+        rename_dict = {}
+        for k in keys:
+            v = self._key_map.get(k, None)
+            if v is not None and len(v) > 0:
+                rename_dict[k] = v
+        return rename_dict
+
+    def _write_to_file(self, f, w):
+        # Read in full dataframe at once to simplify field filtering and renaming using pandas
+        df = pd.DataFrame.from_dict(w.get_dict_values(), orient='columns')
+        #print df.describe() # debug to verify dataset size
+
+        # Get the specified keys and rename those specified
+        if self._key_map is not None:
+            c_keys = self.get_common_keys(df, True)
+            df = df[c_keys]
+            # Get the dictionary subset that should be renamed
+            rn_dict = self.get_rename_dict(c_keys)
+            if len(rn_dict)>  0: # rename fields
+                df=df.rename(index=str, columns=rn_dict)
+
+        if self._json_format:
+            df.to_json(path_or_buf=f, orient='records', date_format='iso', date_unit='s', lines=True)
+        else:
+            df.to_csv(path_or_buf=f, index=False, date_format='%Y-%m-%dT%H:%M:%SZ') # iso datespec format string
+
+
 
 
