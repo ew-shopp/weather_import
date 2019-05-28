@@ -31,7 +31,7 @@ class Weather_combined:
                     self._dict[common][measure['shortName']+'masked'] = True
                     self._dict[common][measure['shortName']] = np.nan
                     self._dict[common]['value'] = np.nan
-                    increment_element(masked_with_nan, measure['shortName'])
+                    self.increment_element(masked_with_nan, measure['shortName'])
                 else:
                     self._dict[common][measure['shortName']] = val
                     
@@ -62,7 +62,7 @@ class Weather_combined:
                     self._dict[common][measure['shortName']+'masked'] = True
                     self._dict[common][measure['shortName']] = np.nan
                     self._dict[common]['value'] = np.nan
-                    increment_element(masked_with_nan, measure['shortName'])
+                    self.increment_element(masked_with_nan, measure['shortName'])
                 else:
                     self._dict[common][measure['shortName']] = val
                     
@@ -72,5 +72,3 @@ class Weather_combined:
             
     def get_dict_values(self):           
         return self._dict.values()
-
-    
