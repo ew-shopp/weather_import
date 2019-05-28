@@ -8,3 +8,9 @@ weather-env/
 run_daily/
 
 curl_test/
+*.grib
+
+
+.idea/
+
+venv/
