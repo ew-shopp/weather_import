@@ -13,6 +13,7 @@ import os
 from weather_forecast_2_json import Weather_forecast_2_json
 
 
+
 ## python main.py ${job_json_file} ${region_csv_file} ${work_path_results} 
 job_json_file = sys.argv[1]    
 region_coordinates_csv_file = sys.argv[2]    
@@ -84,7 +85,10 @@ wf2j = Weather_forecast_2_json(we, json_format, key_map,
             
 for i in range(len(csv)):
     print 'Region: i %d %s' % (i, csv.loc[i,1])
-    wf2j.fetch_forecast_region(start_date, end_date, csv.loc[i])
+    if(i == 0):
+        wf2j.fetch_forecast_region(start_date, end_date, csv.loc[i], True)
+    else:
+        wf2j.fetch_forecast_region(start_date, end_date, csv.loc[i], False)
             
 print 'Ending program'
 
