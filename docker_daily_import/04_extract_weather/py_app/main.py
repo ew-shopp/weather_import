@@ -15,10 +15,11 @@ from weather_forecast_2_json import Weather_forecast_2_json
 
 
 ## python main.py ${job_json_file} ${region_csv_file} ${work_path_results} 
-job_json_file = sys.argv[1]    
-region_coordinates_csv_file = sys.argv[2]    
-out_result_base = sys.argv[3]
 
+region_coordinates_csv_file = sys.argv[1]
+out_result_base = sys.argv[2]
+if len(sys.argv) == 4:
+    job_json_file = sys.argv[3]
 
 input_type = os.environ.get('WE_INPUT_TYPE',"env")
 
@@ -34,7 +35,7 @@ if input_type == "env":
     grib_file = os.environ.get('WE_GRIB_FILE')
     key_sequence = (os.environ.get('WE_KEY_SEQUENCE')).split(',')
     new_key_sequence = (os.environ.get('WE_NEW_KEY_SEQUENCE')).split(',')
-    if(len(key_sequence) != len(new_key_sequence)):
+    if( (len(key_sequence) != len(new_key_sequence))):
         print "WE_KEY_SEQUENCE and WE_NEW_KEY_SEQUENCE must have the same number of elements"
         sys.exit(1)
     key_map = collections.OrderedDict(zip(key_sequence, new_key_sequence))
