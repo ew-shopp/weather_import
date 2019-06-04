@@ -19,7 +19,7 @@ Below is a description of the parameters to be passed via environment variables:
 * WE_GRIB_FILE: grib file with the forecast 
 * WE_FORECAST_DAYS: number of forecast days
 * WE_KEY_SEQUENCE: specify which weather forecast fields of the grib will be shown on the csv and their order. The fields must be separated by commas (no spaces)
-* WE_NEW_KEY_SEQUENCE: this is used to possibly rename the forecast fields when writting the csv. If present, it must constain the same number of elements as the WE_KEY_SEQUENCE. And be empty for the fields not to be renamed. If WE_NEW_KEY_SEQUENCE is not present, the fields will not be renamed
+* WE_NEW_KEY_SEQUENCE: this is used to possibly rename the forecast fields when writting the csv. It must constain the same number of elements as the WE_KEY_SEQUENCE. And be empty for the fields not to be renamed. The position field will be expanded and renamed to "Latitude" and "Longitude" regardless of the WE_NEW_KEY_SEQUENCE.
 * WE_JSON_OUTPUT: if set to true, the output forecast will be written to a json file instead of a cvs. The default is false.
 
 ### Example of parameter settings:
