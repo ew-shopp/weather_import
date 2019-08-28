@@ -9,6 +9,7 @@ RUN pip install --upgrade pip
 #RUN sudo pip install virtualenv; virtualenv --version
 RUN apt-get --yes install build-essential python-dev
 RUN apt-get --yes install wget
+RUN apt-get --yes install unzip
 RUN pip install  pyopenssl ndg-httpsclient pyasn1
 
 WORKDIR /weather
@@ -18,7 +19,7 @@ RUN pip install --no-cache-dir numpy
 RUN pip install --no-cache-dir https://software.ecmwf.int/wiki/download/attachments/56664858/ecmwf-api-client-python.tgz
 
 # Install OpenWeatherMap request lib
-pip install --no-cache-dir requests
+RUN pip install --no-cache-dir requests
 
 # Weather lib installation
 
