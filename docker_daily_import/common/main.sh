@@ -51,9 +51,17 @@ if [ -f "$init_script" ]; then
    $init_script
 fi
 
-echo "Main - Starting $run_file_name"
-$cmd_to_run $run_file_name "$@" &
-pid=$!
+# Execute single_shot if present, else 
+single_shot_script="${code_directory}/single_shot.sh"
+if [ -f "$single_shot_script" ]; then
+    echo "Main - Starting single shot $run_file_name"
+    $single_shot_script $run_file_name "$@" &
+    pid=$!
+else
+    echo "Main - Starting worker $run_file_name"
+    $cmd_to_run $run_file_name "$@" &
+    pid=$!
+fi
 
 # This will wait until the cmd ends or we receive SIGINT
 wait $pid

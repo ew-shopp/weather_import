@@ -43,9 +43,9 @@ class Weather_forecast_2_json:
         base_dates = pd.date_range(from_date, to_date)
         self._fetch_forecast_region_daterange(base_dates, region_elem, print_header)
 
-    def fetch_forecast_owm(self, from_date, to_date, city_elem, print_header):
+    def fetch_forecast_region_owm(self, from_date, to_date, region_elem, print_header):
         base_dates = pd.date_range(from_date, to_date)
-        self._fetch_forecast_owm_daterange(base_dates, city_elem, print_header)
+        self._fetch_forecast_region_owm_daterange(base_dates, region_elem, print_header)
 
     def _print_data(self, weather_data):
         for row in weather_data.iterrows():
@@ -102,21 +102,21 @@ class Weather_forecast_2_json:
         if self._fs != None: 
             self._write_to_file(self._fs, ws, print_header)
 
-    def _fetch_forecast_owm_daterange(self, base_dates, city_elem, print_header):
+    def _fetch_forecast_region_owm_daterange(self, base_dates, region_elem, print_header):
 
         wc = Weather_combined()
         ws = Weather_separate()
-        points = [{'lat': city_elem.loc[1], 'lon': city_elem.loc[2]}]
+
         for bd in base_dates:
             base_date = bd.date()
-            base_date_plus_N = (bd+self._forecast_days).date() # Forecast the next N days
+            base_date_plus_N = (bd+self._forecast_days).date() # Forecase the next N days (probably only 8 present)
             weather_data = self._we.get_forecast(base_date=base_date, 
                 from_date=base_date, to_date=base_date_plus_N)
-        
-            wc.add_city_weather_data(city_elem.loc['Name'], weather_data)
-            ws.add_city_weather_data(city_elem.loc['Name'], weather_data)
-            
-        if self._fc != None: 
+
+            wc.add_region_weather_data(region_elem.loc[1], region_elem.loc[0], region_elem.loc[3], weather_data)
+            ws.add_region_weather_data(region_elem.loc[1], region_elem.loc[0], region_elem.loc[3], weather_data)
+
+        if self._fc != None:
             self._write_to_file(self._fc, wc, print_header)
         if self._fs != None: 
             self._write_to_file(self._fs, ws, print_header)
