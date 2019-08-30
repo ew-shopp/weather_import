@@ -60,6 +60,7 @@ wa = WeatherApi(source='owm', key=owm_key)
 print 'get_forecast per entry'
 csv = pd.read_csv(region_csv_file, header=None)
 
+we = WeatherExtractor()
 wf2j = Weather_forecast_2_json(we, json_format, key_map,
             file_name_combined=out_result_base + '/' + start_date_string + file_suffix)
             
@@ -67,8 +68,8 @@ for i in range(len(csv)):
     print 'Region: i %d %s' % (i, csv.loc[i,1])
     owm_json_filename = work_path_tmp + '/' + csv.loc[i,1] + '.json'
 
-    ur = [csv.loc[4], csv.loc[5]]
-    ll = [csv.loc[6], csv.loc[7]]
+    ur = [csv.loc[i,4], csv.loc[i,5]]
+    ll = [csv.loc[i,6], csv.loc[i,7]]
     lat = (ur[0] + ll[0]) / 2
     lon = (ur[1] + ll[1]) / 2
 
@@ -80,7 +81,6 @@ for i in range(len(csv)):
 
     # load forecasted weather data
     print 'load data file'
-    we = WeatherExtractor()
     we.load([owm_json_filename])
 
     if(i == 0):

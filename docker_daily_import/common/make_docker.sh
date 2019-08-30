@@ -12,6 +12,7 @@ rm common_py/*
 
 #Copy new files
 cp ../common/* common_scripts
+cp ../common_py/* common_py
 
 docker build -t $1 .
 docker push $1 
