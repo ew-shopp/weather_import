@@ -107,9 +107,14 @@ class Weather_forecast_2_json:
         wc = Weather_combined()
         ws = Weather_separate()
 
+
         for bd in base_dates:
             base_date = bd.date()
             base_date_plus_N = (bd+self._forecast_days).date() # Forecase the next N days (probably only 8 present)
+
+            date_format = '%Y-%m-%d'
+            print "<%s> <%s>" % (base_date.strftime(date_format), base_date_plus_N.strftime(date_format))
+
             weather_data = self._we.get_forecast(base_date=base_date, 
                 from_date=base_date, to_date=base_date_plus_N)
 

@@ -45,7 +45,7 @@ echo "Running:  python main.py ${work_path_tmp} ${work_path_results}  "
 python main.py ${work_path_tmp} ${work_path_results}  
 
 # Move the files to output
-${code_directory}/move_to_output.sh ${output_directory} ${work_path_results}*
+${code_directory}/move_to_output.sh ${output_directory} ${work_path_results}/*
 
 echo '   Done'
 

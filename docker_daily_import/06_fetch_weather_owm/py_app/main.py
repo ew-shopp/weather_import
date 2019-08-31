@@ -47,10 +47,7 @@ else:
 start_date = datetime.now().date()
 start_date_string = start_date.strftime(date_format)
 
-end_date = (pd.Timestamp(start_date, freq='D')+forecast_days).date()
-end_date_string = end_date.strftime(date_format)
-
-print "<%s> <%s>" % (start_date_string, end_date_string)
+print "<%s> " % (start_date_string)
 
 file_suffix = '_combined.json' if json_format else '_combined.csv'
 
@@ -84,9 +81,9 @@ for i in range(len(csv)):
     we.load([owm_json_filename])
 
     if(i == 0):
-        wf2j.fetch_forecast_region(start_date, end_date, csv.loc[i], True)
+        wf2j.fetch_forecast_region_owm(start_date, start_date, csv.loc[i], True)
     else:
-        wf2j.fetch_forecast_region(start_date, end_date, csv.loc[i], False)
+        wf2j.fetch_forecast_region_owm(start_date, start_date, csv.loc[i], False)
             
 print 'Ending program'
 
