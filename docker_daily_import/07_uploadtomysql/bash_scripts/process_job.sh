@@ -49,7 +49,7 @@ echo "Table size before upload"
 mysql --host=${server_addr} --user=${usr} --password=${usr_pwd} --local-infile -e "SELECT count(*) from ${table_name};"  ${db_name} 
 
 # Upload the file
-mysql --host=${server_addr} --user=${usr} --password=${usr_pwd} --local-infile  -e "LOAD DATA LOW_PRIORITY LOCAL INFILE \'${work_path}\' INTO TABLE ${table_name} CHARACTER SET utf8 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 LINES ${table_columns};"  ${db_name}
+mysql --host=${server_addr} --user=${usr} --password=${usr_pwd} --local-infile  -e "LOAD DATA LOW_PRIORITY LOCAL INFILE '${work_path}' INTO TABLE ${table_name} CHARACTER SET utf8 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 LINES ${table_columns};"  ${db_name}
 
 echo "Table size after upload"
 mysql --host=${server_addr} --user=${usr} --password=${usr_pwd} --local-infile -e "SELECT count(*) from ${table_name};"  ${db_name} 
